@@ -72,15 +72,39 @@
   const rightPanel = document.getElementById('rightPanel');
   const togglePipeline = document.getElementById('togglePipeline');
   const closePanel = document.getElementById('closePanel');
-  togglePipeline.addEventListener('click', () => rightPanel.classList.toggle('visible'));
-  closePanel.addEventListener('click', () => rightPanel.classList.remove('visible'));
+  togglePipeline.addEventListener('click', () => {
+    if (window.innerWidth <= 1100) rightPanel.classList.toggle('open');
+    else rightPanel.classList.toggle('closed');
+  });
+  closePanel.addEventListener('click', () => {
+    if (window.innerWidth <= 1100) rightPanel.classList.remove('open');
+    else rightPanel.classList.add('closed');
+  });
 
-  // ===== Agent Chips =====
-  const chips = document.querySelectorAll('.agent-chip');
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
+  // ===== Theme Toggle =====
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+  });
+
+  // ===== Agent Selector Dropdown =====
+  const agentSelectBtn = document.getElementById('agentSelectBtn');
+  const agentDropdown = document.getElementById('agentDropdown');
+  const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+  agentSelectBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    agentDropdown.classList.toggle('open');
+  });
+
+  document.addEventListener('click', () => {
+    agentDropdown.classList.remove('open');
+  });
+
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', () => {
+      dropdownItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
     });
   });
 
