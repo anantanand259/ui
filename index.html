@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI — Intelligent Agent Orchestration Platform</title>
+    <meta name="description" content="Build, deploy, and orchestrate AI agents at scale with NexusAI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bgCanvas"></canvas>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+                        <circle cx="14" cy="14" r="4" fill="url(#logoGrad)"/>
+                        <path d="M14 10v-4M14 22v-4M18 14h4M6 14h4" stroke="url(#logoGrad)" stroke-width="1.5"/>
+                        <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#D4715E"/><stop offset="1" stop-color="#F0C060"/></linearGradient></defs>
+                    </svg>
+                </div>
+                <span>NexusAI</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Features</a>
+                <a href="#agents">Agents</a>
+                <a href="orchestration.html">Orchestration</a>
+                <a href="#integrations">Integrations</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-ghost">Sign In</button>
+                <a href="orchestration.html" class="btn-primary">Get Started</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge glass-card">
+                <span class="badge-dot"></span>
+                <span>Now in Public Beta — v2.0 Released</span>
+            </div>
+            <h1 class="hero-title">Orchestrate <span class="gradient-text">AI Agents</span><br>With Precision</h1>
+            <p class="hero-subtitle">Build autonomous multi-agent systems that reason, collaborate, and execute complex workflows. One platform to design, deploy, and monitor intelligent agent pipelines at scale.</p>
+            <div class="hero-cta">
+                <a href="orchestration.html" class="btn-primary btn-lg">
+                    <span>Start Building Free</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="orchestration.html" class="btn-glass btn-lg">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <span>Watch Demo</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Agents Deployed</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><span class="stat-num">99.9%</span><span class="stat-label">Uptime SLA</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><span class="stat-num">200ms</span><span class="stat-label">Avg Latency</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="agent-orb-container">
+                <div class="agent-orb central-orb">
+                    <div class="orb-ring"></div>
+                    <div class="orb-ring ring-2"></div>
+                    <div class="orb-core"></div>
+                    <span>Orchestrator</span>
+                </div>
+                <div class="agent-orb satellite-orb orb-1"><div class="orb-core"></div><span>Research</span></div>
+                <div class="agent-orb satellite-orb orb-2"><div class="orb-core"></div><span>Analysis</span></div>
+                <div class="agent-orb satellite-orb orb-3"><div class="orb-core"></div><span>Code Gen</span></div>
+                <div class="agent-orb satellite-orb orb-4"><div class="orb-core"></div><span>Review</span></div>
+                <svg class="connection-lines" viewBox="0 0 500 500">
+                    <line x1="250" y1="250" x2="100" y2="120" class="conn-line"/>
+                    <line x1="250" y1="250" x2="400" y2="120" class="conn-line"/>
+                    <line x1="250" y1="250" x2="100" y2="380" class="conn-line"/>
+                    <line x1="250" y1="250" x2="400" y2="380" class="conn-line"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>OpenAI</span><span class="marquee-dot">◆</span>
+                <span>Anthropic</span><span class="marquee-dot">◆</span>
+                <span>Google DeepMind</span><span class="marquee-dot">◆</span>
+                <span>Meta AI</span><span class="marquee-dot">◆</span>
+                <span>Mistral</span><span class="marquee-dot">◆</span>
+                <span>Cohere</span><span class="marquee-dot">◆</span>
+                <span>Hugging Face</span><span class="marquee-dot">◆</span>
+                <span>LangChain</span><span class="marquee-dot">◆</span>
+                <span>OpenAI</span><span class="marquee-dot">◆</span>
+                <span>Anthropic</span><span class="marquee-dot">◆</span>
+                <span>Google DeepMind</span><span class="marquee-dot">◆</span>
+                <span>Meta AI</span><span class="marquee-dot">◆</span>
+                <span>Mistral</span><span class="marquee-dot">◆</span>
+                <span>Cohere</span><span class="marquee-dot">◆</span>
+                <span>Hugging Face</span><span class="marquee-dot">◆</span>
+                <span>LangChain</span><span class="marquee-dot">◆</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="section features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag glass-card">Features</span>
+                <h2 class="section-title">Everything You Need to <span class="gradient-text">Build Smarter</span></h2>
+                <p class="section-desc">From agent creation to production monitoring, our platform provides a complete toolkit for AI orchestration.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card" data-anim="fade-up">
+                    <div class="feature-icon icon-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 014 4c0 1.1-.9 2-2 2h-4a2 2 0 01-2-2 4 4 0 014-4z"/><path d="M8 8v8a4 4 0 008 0V8"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/></svg></div>
+                    <h3>Autonomous Agents</h3>
+                    <p>Deploy self-governing agents that reason, plan, and act independently using advanced LLM architectures with tool-use capabilities.</p>
+                </div>
+                <div class="feature-card glass-card" data-anim="fade-up" style="--delay:.1s">
+                    <div class="feature-icon icon-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/><path d="M10 7h4M7 10v4M17 10v4M10 17h4"/></svg></div>
+                    <h3>Visual Workflow Builder</h3>
+                    <p>Design complex agent pipelines with our drag-and-drop canvas. Connect agents, tools, and data sources visually.</p>
+                </div>
+                <div class="feature-card glass-card" data-anim="fade-up" style="--delay:.2s">
+                    <div class="feature-icon icon-cyan"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+                    <h3>Real-Time Monitoring</h3>
+                    <p>Track agent performance, token usage, latency, and decision traces in real-time with our comprehensive dashboard.</p>
+                </div>
+                <div class="feature-card glass-card" data-anim="fade-up" style="--delay:.3s">
+                    <div class="feature-icon icon-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                    <h3>Enterprise Security</h3>
+                    <p>SOC 2 compliant with end-to-end encryption, role-based access control, and comprehensive audit logging.</p>
+                </div>
+                <div class="feature-card glass-card" data-anim="fade-up" style="--delay:.4s">
+                    <div class="feature-icon icon-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg></div>
+                    <h3>Multi-Model Support</h3>
+                    <p>Seamlessly switch between GPT-4, Claude, Gemini, Llama, and custom models. Use the right model for each task.</p>
+                </div>
+                <div class="feature-card glass-card" data-anim="fade-up" style="--delay:.5s">
+                    <div class="feature-icon icon-pink"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/><path d="M14 4l-4 16"/></svg></div>
+                    <h3>API &amp; SDK</h3>
+                    <p>Powerful REST API and SDKs for Python, TypeScript, and Go. Integrate agent orchestration into any application.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents -->
+    <section class="section agents-section" id="agents">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag glass-card">Agent Types</span>
+                <h2 class="section-title">Pre-Built <span class="gradient-text">Agent Templates</span></h2>
+                <p class="section-desc">Start with production-ready agent templates or build your own from scratch.</p>
+            </div>
+            <div class="agents-grid">
+                <div class="agent-card glass-card" data-anim="fade-up">
+                    <div class="agent-card-header"><div class="agent-avatar purple">🔬</div><div class="agent-status online">Active</div></div>
+                    <h3>Research Agent</h3>
+                    <p>Autonomously searches, synthesizes, and reports on any topic with cited sources.</p>
+                    <div class="agent-tags"><span>RAG</span><span>Web Search</span><span>Summarization</span></div>
+                    <div class="agent-metrics"><div><strong>2.1s</strong><span>Avg Response</span></div><div><strong>98.5%</strong><span>Accuracy</span></div></div>
+                </div>
+                <div class="agent-card glass-card" data-anim="fade-up" style="--delay:.1s">
+                    <div class="agent-card-header"><div class="agent-avatar blue">💻</div><div class="agent-status online">Active</div></div>
+                    <h3>Code Agent</h3>
+                    <p>Generates, reviews, and refactors code across 20+ languages with test generation.</p>
+                    <div class="agent-tags"><span>Code Gen</span><span>Debugging</span><span>Testing</span></div>
+                    <div class="agent-metrics"><div><strong>1.8s</strong><span>Avg Response</span></div><div><strong>96.2%</strong><span>Pass Rate</span></div></div>
+                </div>
+                <div class="agent-card glass-card" data-anim="fade-up" style="--delay:.2s">
+                    <div class="agent-card-header"><div class="agent-avatar cyan">📊</div><div class="agent-status online">Active</div></div>
+                    <h3>Data Analyst</h3>
+                    <p>Processes datasets, creates visualizations, and generates actionable insights automatically.</p>
+                    <div class="agent-tags"><span>Analytics</span><span>Visualization</span><span>SQL</span></div>
+                    <div class="agent-metrics"><div><strong>3.2s</strong><span>Avg Response</span></div><div><strong>97.8%</strong><span>Accuracy</span></div></div>
+                </div>
+                <div class="agent-card glass-card" data-anim="fade-up" style="--delay:.3s">
+                    <div class="agent-card-header"><div class="agent-avatar green">🛡️</div><div class="agent-status online">Active</div></div>
+                    <h3>QA Guardian</h3>
+                    <p>Validates outputs, checks for hallucinations and enforces quality standards.</p>
+                    <div class="agent-tags"><span>Validation</span><span>Fact-Check</span><span>QA</span></div>
+                    <div class="agent-metrics"><div><strong>0.9s</strong><span>Avg Response</span></div><div><strong>99.1%</strong><span>Detection</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orchestration -->
+    <section class="section orchestration-section" id="orchestration">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag glass-card">How It Works</span>
+                <h2 class="section-title">Intelligent <span class="gradient-text">Orchestration Engine</span></h2>
+                <p class="section-desc">Our engine manages agent collaboration, task routing, and workflow execution.</p>
+            </div>
+            <div class="orch-steps">
+                <div class="orch-step glass-card" data-anim="fade-right">
+                    <div class="step-number">01</div><h3>Define Your Task</h3>
+                    <p>Describe your objective in natural language. The orchestrator breaks it into sub-tasks.</p>
+                </div>
+                <div class="orch-connector"><div class="connector-line"></div><div class="connector-dot"></div></div>
+                <div class="orch-step glass-card" data-anim="fade-right" style="--delay:.15s">
+                    <div class="step-number">02</div><h3>Agent Assignment</h3>
+                    <p>The engine selects optimal agents based on capability, performance history, and cost.</p>
+                </div>
+                <div class="orch-connector"><div class="connector-line"></div><div class="connector-dot"></div></div>
+                <div class="orch-step glass-card" data-anim="fade-right" style="--delay:.3s">
+                    <div class="step-number">03</div><h3>Parallel Execution</h3>
+                    <p>Agents execute concurrently with real-time communication and shared memory.</p>
+                </div>
+                <div class="orch-connector"><div class="connector-line"></div><div class="connector-dot"></div></div>
+                <div class="orch-step glass-card" data-anim="fade-right" style="--delay:.45s">
+                    <div class="step-number">04</div><h3>Synthesized Output</h3>
+                    <p>Results are validated, merged, and delivered with full traceability and audit trail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="section integrations-section" id="integrations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag glass-card">Integrations</span>
+                <h2 class="section-title">Connect With Your <span class="gradient-text">Entire Stack</span></h2>
+                <p class="section-desc">Plug into 100+ tools and services your team already uses.</p>
+            </div>
+            <div class="integrations-grid">
+                <div class="integration-item glass-card" data-anim="zoom">🔗 Slack</div>
+                <div class="integration-item glass-card" data-anim="zoom">📋 Jira</div>
+                <div class="integration-item glass-card" data-anim="zoom">🐙 GitHub</div>
+                <div class="integration-item glass-card" data-anim="zoom">☁️ AWS</div>
+                <div class="integration-item glass-card" data-anim="zoom">🔷 Azure</div>
+                <div class="integration-item glass-card" data-anim="zoom">📦 Docker</div>
+                <div class="integration-item glass-card" data-anim="zoom">🗄️ PostgreSQL</div>
+                <div class="integration-item glass-card" data-anim="zoom">🔴 Redis</div>
+                <div class="integration-item glass-card" data-anim="zoom">📊 Datadog</div>
+                <div class="integration-item glass-card" data-anim="zoom">🔐 Vault</div>
+                <div class="integration-item glass-card" data-anim="zoom">🌐 Vercel</div>
+                <div class="integration-item glass-card" data-anim="zoom">📡 Webhook</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Preview -->
+    <section class="section code-section">
+        <div class="container">
+            <div class="code-split">
+                <div class="code-info">
+                    <span class="section-tag glass-card">Developer First</span>
+                    <h2 class="section-title">Ship Agents <span class="gradient-text">In Minutes</span></h2>
+                    <p class="section-desc">Simple, intuitive API that gets out of your way. Define agents, wire up tools, and deploy with a few lines of code.</p>
+                    <ul class="code-features">
+                        <li><span class="check">✓</span> Type-safe SDKs for Python &amp; TypeScript</li>
+                        <li><span class="check">✓</span> Built-in retry, fallback &amp; rate limiting</li>
+                        <li><span class="check">✓</span> Streaming responses out of the box</li>
+                        <li><span class="check">✓</span> OpenTelemetry compatible tracing</li>
+                    </ul>
+                </div>
+                <div class="code-block glass-card">
+                    <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-filename">orchestrate.py</span></div>
+                    <pre><code><span class="kw">from</span> nexusai <span class="kw">import</span> Agent, Orchestrator
+
+<span class="cm"># Define specialized agents</span>
+researcher = Agent(
+    <span class="str">"research-agent"</span>,
+    model=<span class="str">"gpt-4o"</span>,
+    tools=[web_search, arxiv, wiki]
+)
+
+coder = Agent(
+    <span class="str">"code-agent"</span>,
+    model=<span class="str">"claude-sonnet"</span>,
+    tools=[code_exec, git, tests]
+)
+
+<span class="cm"># Create orchestration pipeline</span>
+pipeline = Orchestrator([researcher, coder])
+result = <span class="kw">await</span> pipeline.run(
+    <span class="str">"Build a REST API for user auth"</span>
+)</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag glass-card">Pricing</span>
+                <h2 class="section-title">Simple, <span class="gradient-text">Transparent Pricing</span></h2>
+                <p class="section-desc">Start free. Scale as you grow. No hidden fees.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card glass-card" data-anim="fade-up">
+                    <h3>Starter</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <p class="price-desc">Perfect for experimenting</p>
+                    <ul><li>✓ 5 Active Agents</li><li>✓ 10K API Calls/mo</li><li>✓ Community Support</li><li>✓ Basic Monitoring</li><li>✓ 3 Workflows</li></ul>
+                    <button class="btn-glass btn-full">Get Started</button>
+                </div>
+                <div class="pricing-card glass-card featured" data-anim="fade-up" style="--delay:.1s">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">$49<span>/month</span></div>
+                    <p class="price-desc">For growing teams</p>
+                    <ul><li>✓ 50 Active Agents</li><li>✓ 500K API Calls/mo</li><li>✓ Priority Support</li><li>✓ Advanced Analytics</li><li>✓ Unlimited Workflows</li><li>✓ Custom Models</li></ul>
+                    <button class="btn-primary btn-full">Start Free Trial</button>
+                </div>
+                <div class="pricing-card glass-card" data-anim="fade-up" style="--delay:.2s">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p class="price-desc">For large organizations</p>
+                    <ul><li>✓ Unlimited Agents</li><li>✓ Unlimited API Calls</li><li>✓ Dedicated Support</li><li>✓ On-Premise Deploy</li><li>✓ Custom SLA</li><li>✓ SSO &amp; SAML</li></ul>
+                    <button class="btn-glass btn-full">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-card glass-card">
+                <h2>Ready to Build the <span class="gradient-text">Future of AI?</span></h2>
+                <p>Join thousands of developers building intelligent agent systems with NexusAI.</p>
+                <div class="cta-btns">
+                    <a href="orchestration.html" class="btn-primary btn-lg">Start Building Free</a>
+                    <a href="orchestration.html" class="btn-glass btn-lg">Try the Studio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <div class="logo-icon"><svg width="24" height="24" viewBox="0 0 28 28" fill="none"><path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="url(#logoGrad2)" stroke-width="2" fill="none"/><circle cx="14" cy="14" r="4" fill="url(#logoGrad2)"/><defs><linearGradient id="logoGrad2" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#D4715E"/><stop offset="1" stop-color="#F0C060"/></linearGradient></defs></svg></div>
+                        <span>NexusAI</span>
+                    </a>
+                    <p>Building the future of intelligent agent orchestration.</p>
+                </div>
+                <div class="footer-links"><h4>Product</h4><a href="#">Features</a><a href="#">Pricing</a><a href="#">Documentation</a><a href="#">Changelog</a></div>
+                <div class="footer-links"><h4>Company</h4><a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a><a href="#">Contact</a></div>
+                <div class="footer-links"><h4>Legal</h4><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a><a href="#">GDPR</a></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NexusAI. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="GitHub">⌘</a>
+                    <a href="#" aria-label="Discord">◈</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
